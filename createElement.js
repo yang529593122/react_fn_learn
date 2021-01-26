@@ -1,5 +1,5 @@
 function createElement(type, config={}, children) { 
-      // type 节点  config 是节点  的属性 children 是节点的内容 
+      // type 节点  config 是节点配置属性  的属性 children 是节点的内容 
       let props={}; 
       // 遍历 config  设置props
       for(let propsName in config){
@@ -17,6 +17,7 @@ function createElement(type, config={}, children) {
   
   // 把创建的虚拟啊dome对象转为真实DOM元素最后插入到页面中
   function render(virtureDOM, container, callback) {
+    // virtureDOM dome节点对象  container 父节点  callback 回调函数
     let { type, props } = virtureDOM || {};
     let realDom = document.createElement(type);
   
